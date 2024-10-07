@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\RoutingController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,16 +17,17 @@ use Illuminate\Support\Facades\Route;
 
 require __DIR__ . '/auth.php';
 
-Route::group(['prefix' => '/', 'middleware' => 'auth'], function () {
-    Route::get('', [RoutingController::class, 'index'])->name('root');
-    Route::get('{first}/{second}/{third}', [RoutingController::class, 'thirdLevel'])->name('third');
-    Route::get('{first}/{second}', [RoutingController::class, 'secondLevel'])->name('second');
-    Route::get('{any}', [RoutingController::class, 'root'])->name('any');
-});
 Route::get('/clear', function () {
     Artisan::call('cache:clear');
     Artisan::call('route:cache');
     Artisan::call('view:clear');
     Artisan::call('config:cache');
     return "all cleared ...";
+});
+Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('', [RoutingController::class, 'index'])->name('root');
+    Route::get('{first}/{second}/{third}', [RoutingController::class, 'thirdLevel'])->name('third');
+    Route::get('{first}/{second}', [RoutingController::class, 'secondLevel'])->name('second');
+    Route::get('{any}', [RoutingController::class, 'root'])->name('any');
 });
