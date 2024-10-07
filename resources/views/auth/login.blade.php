@@ -9,19 +9,21 @@
                         <div class="col-lg-6 py-lg-5">
                             <div class="d-flex flex-column h-100 justify-content-center">
                                 <div class="auth-logo mb-4">
-                                    <a href="{{ route('second', [ 'dashboards' , 'index']) }}" class="logo-dark">
-                                        <img src="/images/logo-dark.png" height="24" alt="logo dark">
+                                    <a href="{{ route('second', ['dashboards', 'index']) }}" class="logo-dark">
+                                        <img src="/images/logo-nombre.png" height="50" alt="logo dark">
                                     </a>
 
-                                    <a href="{{ route('second', [ 'dashboards' , 'index']) }}" class="logo-light">
-                                        <img src="/images/logo-light.png" height="24" alt="logo light">
+                                    <a href="{{ route('second', ['dashboards', 'index']) }}" class="logo-light">
+                                        <img src="/images/logo-light.png" height="50" alt="logo light">
                                     </a>
                                 </div>
 
-                                <h2 class="fw-bold fs-24">Sign In</h2>
+                                <h2 class="fw-bold fs-24">Iniciar Sesión</h2>
 
-                                <p class="text-muted mt-1 mb-4">Enter your email address and password to access admin
-                                    panel.</p>
+                                <p class="text-muted mt-1 mb-4">
+                                    Ingrese su dirección de correo electrónico y contraseña para acceder al panel de
+                                    administración.
+                                </p>
 
                                 <div class="mb-5">
                                     <form method="POST" action="{{ route('login') }}" class="authentication-form">
@@ -33,43 +35,44 @@
                                         @endif
 
                                         <div class="mb-3">
-                                            <label class="form-label" for="example-email">Email</label>
-                                            <input type="email" id="example-email" name="email"
-                                                   class="form-control bg-" placeholder="Enter your email"
-                                                   value="test@example.com">
+                                            <label class="form-label" for="example-email">Correo electronico:</label>
+                                            <input type="email" id="example-email" name="email" class="form-control bg-"
+                                                placeholder="Ingresa tu correo ">
                                         </div>
                                         <div class="mb-3">
-                                            <a href="{{ route('second', [ 'auth' , 'reset-password']) }}"
-                                               class="float-end text-muted text-unline-dashed ms-1">Reset password</a>
-                                            <label class="form-label" for="example-password">Password</label>
+                                            <a href="{{ route('second', ['auth', 'reset-password']) }}"
+                                                class="float-end text-muted text-unline-dashed ms-1">Recuperar
+                                                Contraseña</a>
+                                            <label class="form-label" for="example-password">Contraseña:</label>
                                             <input type="password" id="example-password" class="form-control"
-                                                   placeholder="Enter your password" name="password" value="password">
+                                                placeholder="Ingrese su contraseña" name="password">
                                         </div>
                                         <div class="mb-3">
                                             <div class="form-check">
                                                 <input type="checkbox" class="form-check-input" id="checkbox-signin">
-                                                <label class="form-check-label" for="checkbox-signin">Remember
-                                                    me</label>
+                                                <label class="form-check-label" for="checkbox-signin">Recuerdame
+                                                </label>
                                             </div>
                                         </div>
 
                                         <div class="mb-1 text-center d-grid">
-                                            <button class="btn btn-soft-primary" type="submit">Sign In</button>
+                                            <button class="btn btn-soft-primary" type="submit">Iniciar Sesión</button>
                                         </div>
                                     </form>
 
-                                    <p class="mt-3 fw-semibold no-span">OR sign with</p>
+                                    <p class="mt-3 fw-semibold no-span">O iniciar con</p>
 
                                     <div class="d-grid gap-2">
                                         <a href="javascript:void(0);" class="btn btn-soft-dark"><i
-                                                class="bx bxl-google fs-20 me-1"></i> Sign in with Google</a>
+                                                class="bx bxl-google fs-20 me-1"></i> Iniciar con Google</a>
                                         <a href="javascript:void(0);" class="btn btn-soft-primary"><i
-                                                class="bx bxl-facebook fs-20 me-1"></i> Sign in with Facebook</a>
+                                                class="bx bxl-facebook fs-20 me-1"></i> Iniciar con Facebook</a>
                                     </div>
                                 </div>
 
-                                <p class="text-danger text-center">Don't have an account? <a href="{{ route('second', [ 'auth' , 'register']) }}"
-                                                                                             class="text-dark fw-bold ms-1">Register</a></p>
+                                <p class="text-danger text-center">¿No tienes una cuenta?<a
+                                        href="{{ route('second', ['auth', 'register']) }}"
+                                        class="text-dark fw-bold ms-1">Registrar</a></p>
                             </div>
                         </div>
                     </div>
