@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\RoutingController;
+use App\Http\Controllers\Ecommerce\IndexController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
  */
+Route::get('', [IndexController::class, 'index'])->name('index');
+Route::get('/faq', [IndexController::class, 'faq'])->name('index');
 
 require __DIR__ . '/auth.php';
 
@@ -28,7 +30,7 @@ Route::get('/clear', function () {
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboards/index', [DashboardController::class, 'index'])->name('dashboards.index');
-    Route::get('', [RoutingController::class, 'index'])->name('root');
+    //Route::get('', [RoutingController::class, 'index'])->name('root');
     /*
 Route::get('{first}/{second}/{third}', [RoutingController::class, 'thirdLevel'])->name('third');
 Route::get('{first}/{second}', [RoutingController::class, 'secondLevel'])->name('second');

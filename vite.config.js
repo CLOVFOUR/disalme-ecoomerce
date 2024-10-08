@@ -20,6 +20,8 @@ export default defineConfig({
                 'resources/js/app.js',
                 'resources/js/config.js',
                 'resources/js/layout.js',
+                'resources/js/ecommerce/layout.js',
+
                 'resources/js/pages/dashboard.js',
                 'resources/js/pages/ecommerce-product.js',
                 'resources/js/pages/ecommerce-product-details.js',
