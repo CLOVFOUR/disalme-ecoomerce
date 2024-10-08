@@ -24,10 +24,13 @@ Route::get('/clear', function () {
     Artisan::call('config:cache');
     return "all cleared ...";
 });
+
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('', [RoutingController::class, 'index'])->name('root');
-    Route::get('{first}/{second}/{third}', [RoutingController::class, 'thirdLevel'])->name('third');
-    Route::get('{first}/{second}', [RoutingController::class, 'secondLevel'])->name('second');
-    Route::get('{any}', [RoutingController::class, 'root'])->name('any');
+    /*
+Route::get('{first}/{second}/{third}', [RoutingController::class, 'thirdLevel'])->name('third');
+Route::get('{first}/{second}', [RoutingController::class, 'secondLevel'])->name('second');
+Route::get('{any}', [RoutingController::class, 'root'])->name('any');
+ */
 });

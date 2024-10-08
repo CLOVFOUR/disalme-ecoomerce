@@ -14,7 +14,7 @@
                                     </a>
 
                                     <a href="{{ route('second', ['dashboards', 'index']) }}" class="logo-light">
-                                        <img src="/images/logo-light.png" height="50" alt="logo light">
+                                        <img src="/images/logo-nombre.png" height="50" alt="logo light">
                                     </a>
                                 </div>
 
@@ -70,8 +70,7 @@
                                     </div>
                                 </div>
 
-                                <p class="text-danger text-center">¿No tienes una cuenta?<a
-                                        href="{{ route('second', ['auth', 'register']) }}"
+                                <p class="text-danger text-center">¿No tienes una cuenta?<a href="{{ route('register') }}"
                                         class="text-dark fw-bold ms-1">Registrar</a></p>
                             </div>
                         </div>

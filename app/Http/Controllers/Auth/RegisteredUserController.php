@@ -17,8 +17,15 @@ class RegisteredUserController extends Controller
      *
      * @return \Illuminate\View\View
      */
+    protected $validationAttributes = [
+        'name' => 'Nombre',
+        'email' => 'Correo',
+        'password' => 'Contraseña',
+
+    ];
     public function create()
     {
+        //  dd("lll");
         return view('auth.register');
     }
 
@@ -32,10 +39,12 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
+        //  dd($request);
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|confirmed|min:8',
+            'terms' => 'required|accepted',
         ]);
 
         $user = User::create([

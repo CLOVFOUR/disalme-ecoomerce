@@ -4,31 +4,32 @@
 <head>
     @include('layouts.partials/title-meta', ['title' => $title])
     @yield('css')
+    @livewireStyles
     @include('layouts.partials/head-css')
 </head>
 
 <body>
 
-<div class="wrapper">
+    <div class="wrapper">
 
-    @include("layouts.partials/topbar", ['title' => $title])
-    @include('layouts.partials/main-nav')
+        @include('layouts.partials/topbar', ['title' => $title])
+        @include('layouts.partials/main-nav')
 
-    <div class="page-content">
+        <div class="page-content">
 
-        <div class="container-fluid">
-            @yield('content')
+            <div class="container-fluid">
+                @yield('content')
+            </div>
+
+            @include('layouts.partials/footer')
+
         </div>
-
-        @include("layouts.partials/footer")
 
     </div>
 
-</div>
-
-@include("layouts.partials/right-sidebar")
-@include("layouts.partials/footer-scripts")
-@vite(['resources/js/app.js','resources/js/layout.js'])
+    @include('layouts.partials/right-sidebar')
+    @include('layouts.partials/footer-scripts')
+    @vite(['resources/js/app.js', 'resources/js/layout.js'])
 
 </body>
 
