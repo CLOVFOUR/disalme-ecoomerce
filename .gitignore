@@ -16,6 +16,8 @@ node_modules/
 composer.lock
 dist/
 /vendor/*
+/vendor/
+
 /storage/*.key
 .env
 .vscode
