@@ -9,11 +9,11 @@
                         <div class="col-lg-6 py-lg-5">
                             <div class="d-flex flex-column h-100 justify-content-center">
                                 <div class="auth-logo mb-4">
-                                    <a href="{{ route('second', ['dashboards', 'index']) }}" class="logo-dark">
+                                    <a href="{{ route('dashboards.index') }}" class="logo-dark">
                                         <img src="/images/logo-nombre.png" height="50" alt="logo dark">
                                     </a>
 
-                                    <a href="{{ route('second', ['dashboards', 'index']) }}" class="logo-light">
+                                    <a href="{{ route('dashboards.index') }}" class="logo-light">
                                         <img src="/images/logo-nombre.png" height="50" alt="logo light">
                                     </a>
                                 </div>
@@ -40,7 +40,7 @@
                                                 placeholder="Ingresa tu correo ">
                                         </div>
                                         <div class="mb-3">
-                                            <a href="{{ route('second', ['auth', 'reset-password']) }}"
+                                            <a href="{{ route('password.reset', ['token' => ' @csrf']) }}"
                                                 class="float-end text-muted text-unline-dashed ms-1">Recuperar
                                                 Contraseña</a>
                                             <label class="form-label" for="example-password">Contraseña:</label>

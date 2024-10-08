@@ -23,6 +23,17 @@ html[data-bs-theme="dark"] {
           }
      }
 }
+html[data-bs-theme="light"] {
+     .auth-logo {
+          .logo-dark {
+               display: none;
+          }
+
+          .logo-light {
+               display: block;
+          }
+     }
+}
 
 .account-pages {
      .auth-card {

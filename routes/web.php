@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\RoutingController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
@@ -26,7 +27,7 @@ Route::get('/clear', function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
-
+    Route::get('/dashboards/index', [DashboardController::class, 'index'])->name('dashboards.index');
     Route::get('', [RoutingController::class, 'index'])->name('root');
     /*
 Route::get('{first}/{second}/{third}', [RoutingController::class, 'thirdLevel'])->name('third');
